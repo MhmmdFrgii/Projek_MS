@@ -17,17 +17,12 @@ class Jurusan extends Model
 
     public function siswa()
     {
-        return $this->hasMany(Siswa::class);
+        return $this->hasMany(Siswa::class, 'id_jurusan');
     }
 
     public function guru()
     {
         return $this->hasMany(Guru::class);
-    }
-
-    public function kelas()
-    {
-        return $this->hasMany(Kelas::class);
     }
 
     public function scopeSearch($query, $search)

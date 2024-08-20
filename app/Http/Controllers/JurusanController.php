@@ -68,10 +68,8 @@ class JurusanController extends Controller
     return redirect()->route('jurusan.index')->with('status', 'Data jurusan berhasil diubah.');
     }
 
-    public function destroy($id)
+    public function destroy(Jurusan $jurusan)
     {
-        $jurusan = Jurusan::findOrFail($id);
-
         if ($jurusan->siswa()->exists()) {
             return redirect()->route('jurusan.index')->with('error', 'jurusan tidak dapat dihapus karena masih terhubung dengan data.');
         }

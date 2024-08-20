@@ -32,7 +32,7 @@ class SiswaController extends Controller
 
         $message = $siswa->isEmpty() ? 'Data tidak ditemukan' : '';
 
-        return view('siswa.index', compact('siswa', 'kelas', 'jurusan', 'organisasi', 'ekskul', 'message', 'key'));
+        return view('siswa.index', compact('siswa', 'kelas', 'jurusan', 'organisasi', 'ekskul', 'message', 'key',));
     }
 
     public function create()
